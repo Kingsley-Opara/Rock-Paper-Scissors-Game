@@ -14,8 +14,7 @@ user_input = input('Please, pick a player from the folowing options: \n').upper(
 computer_version = choice(possible_options)
 
 # checks if the user input is close to the list of options
-checks_list = get_close_matches(user_input, possible_options, n=1, cutoff=0.2)
-if checks_list is not None:
+if (checks_list := get_close_matches(user_input, possible_options, n=1, cutoff=0.2)) is not None:
     if not user_input in checks_list:
         print(f'Do you mean to pick player {checks_list}')
     else:
