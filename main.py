@@ -1,5 +1,6 @@
-from random import choice
 from difflib import get_close_matches
+import secrets
+
 print("Welcome to the Rock-Paper-Scissors game")
 print('----------------------------------------')
 print(" Enter R for 'Rock', P for 'Paper', and S for 'Scissors' ")
@@ -11,7 +12,7 @@ possible_options = ['R', 'P', 'S']
 user_input = input('Please, pick a player from the folowing options: \n').upper()
 
 # The computer randomly choose a player
-computer_version = choice(possible_options)
+computer_version = secrets.SystemRandom().choice(possible_options)
 
 # checks if the user input is close to the list of options
 checks_list = get_close_matches(user_input, possible_options, n=1, cutoff=0.2)
